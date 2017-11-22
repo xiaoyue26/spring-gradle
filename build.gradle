@@ -55,6 +55,8 @@ dependencies {
         exclude group: 'com.fasterxml.jackson.core'
       } // 排除依赖示例
     * */
+    // 第三章 安全:
+    compile("org.springframework.boot:spring-boot-starter-security")
 }
 
 jar {
