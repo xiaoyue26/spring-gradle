@@ -9,7 +9,6 @@ amazon:
 
 logging:
   path: /Users/xiaoyue26/learn/logs
-  file: book-worm.log
   level:
     root: INFO
     org:
