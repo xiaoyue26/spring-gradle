@@ -95,7 +95,12 @@ buildscript {
     }
 }
 
-apply plugin: "com.github.johnrengelman.shadow" // grade shadowJar -- 这个不能生成运行包;gradle build可以.
+//apply plugin: "com.github.johnrengelman.shadow"
+// grade shadowJar -- 这个不能生成运行包;gradle build可以.
+/*
+*  单独生成可执行jar或可部署war时,使用gradle build
+*  生成lib包给别的项目依赖使用时,使用gradle shadowJar
+* */
 apply plugin: 'spring-boot'
 
 // 编译 gradle compileScala
