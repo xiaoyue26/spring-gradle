@@ -4,6 +4,8 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'application' //可选(可自动生成shell启动脚本)
+apply plugin: 'war' // 生成war包
+
 
 sourceCompatibility = 1.8
 
@@ -15,7 +17,7 @@ repositories {
     mavenCentral()
 }
 
-mainClassName = 'Demo'
+mainClassName = 'readinglist.ReadingListApplication'
 sourceSets {
     main {
         java {
@@ -47,6 +49,12 @@ dependencies {
     //testCompile group: 'junit', name: 'junit', version: '4.12'
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+    /*{
+exclude module: "spring-boot-starter-tomcat"
+}*/
+    /*compile("org.springframework.boot:spring-boot-starter-jetty")*/
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("com.h2database:h2")
@@ -59,11 +67,18 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-security")
 }
 
-jar {
+/*jar {
     manifest {
         attributes 'Main-Class': mainClassName
     }
+}*/
+
+
+war {
+    baseName = 'myapp'
+    version =  '0.0.1'
 }
+
 
 buildscript {
     ext {
@@ -80,7 +95,7 @@ buildscript {
     }
 }
 
-apply plugin: "com.github.johnrengelman.shadow" // grade shadowJar
+apply plugin: "com.github.johnrengelman.shadow" // grade shadowJar -- 这个不能生成运行包;gradle build可以.
 apply plugin: 'spring-boot'
 
 // 编译 gradle compileScala
@@ -91,3 +106,5 @@ apply plugin: 'spring-boot'
 // 打包时分离各个jar包:  gradle inD
 // 打包时合并成一个jar包: gradle shadowJar
 // 简写 gradle shadowJ
+
+// grade build生成可运行.
