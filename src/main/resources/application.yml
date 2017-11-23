@@ -7,8 +7,31 @@ error:
 amazon:
   associate_id: habuma-20
 
+
+
+spring.profiles.active: test
+
+# 本地环境
+---
+spring:
+    profiles: local
+
 logging:
   path: /Users/xiaoyue26/learn/logs
+  level:
+    root: INFO
+    org:
+      springframework:
+        security: INFO
+
+
+---
+# 测试服务环境
+spring:
+    profiles: test
+
+logging:
+  file: /Users/xiaoyue26/learn/logs/test.log
   level:
     root: INFO
     org:
