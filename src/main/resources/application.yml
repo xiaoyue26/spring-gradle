@@ -15,7 +15,7 @@ spring.profiles.active: test
 ---
 spring:
     profiles: local
-
+# path和file只能指定一个. 指定path的时候,文件名为spring.log
 logging:
   path: /Users/xiaoyue26/learn/logs
   level:
@@ -25,8 +25,8 @@ logging:
         security: INFO
 
 
----
 # 测试服务环境
+---
 spring:
     profiles: test
 
