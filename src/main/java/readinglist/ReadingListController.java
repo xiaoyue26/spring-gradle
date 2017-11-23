@@ -20,7 +20,7 @@ public class ReadingListController {
 	private ReadingListRepository readingListRepository;
 	private AmazonProperties amazonConfig;
 
-	@Autowired
+	@Autowired// 自动注入方法的参数
 	public ReadingListController(ReadingListRepository readingListRepository,
 								 AmazonProperties amazonConfig) {
 		this.readingListRepository = readingListRepository;

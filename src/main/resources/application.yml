@@ -8,5 +8,10 @@ amazon:
   associate_id: habuma-20
 
 logging:
+  path: /Users/xiaoyue26/learn/logs
+  file: book-worm.log
   level:
     root: DEBUG
+    org:
+      springframework:
+        security: DEBUG

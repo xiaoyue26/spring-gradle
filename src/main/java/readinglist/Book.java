@@ -14,7 +14,7 @@ public class Book {
 	private Long id;
 
 	@ManyToOne
-	private Reader reader;
+	private Reader reader;// 一个reader可以有多个book
 	private String isbn;
 	private String title;
 	private String author;
