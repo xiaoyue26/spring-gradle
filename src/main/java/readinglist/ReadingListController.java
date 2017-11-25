@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 @RequestMapping("/")
-@ConfigurationProperties("amazon")
+//@ConfigurationProperties("amazon") 由于使用AmazonProperties,controller可以不配置这个了.
 public class ReadingListController {
 
 	private ReadingListRepository readingListRepository;

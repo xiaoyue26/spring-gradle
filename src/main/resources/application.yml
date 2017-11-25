@@ -10,7 +10,11 @@ amazon:
 
 
 spring.profiles.active: local
-
+spring:
+  datasource:
+  url: jdbc:mysql://localhost/readinglist
+  username: root
+  password: mysql
 # 本地环境
 ---
 spring:
