@@ -1,0 +1,8 @@
+Configuration:
+  status: info
+  Appenders:
+    Console:
+      name: console
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%p] [%t] [%c] @@@traceId=%X{TRACE_ID}@@@ %m%n"
