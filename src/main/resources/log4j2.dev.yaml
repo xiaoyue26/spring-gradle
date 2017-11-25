@@ -2,9 +2,9 @@ Configuration:
   properties:
     property:
       - name: logPath
-        value: /Users/xiaoyue26/learn/logs
+        value: /Users/xiaoyue26/learn/logs/
       - name: filename
-        value: conan-english-mission.log
+        value: dev.log
       - name: pattern
         value: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%p] [%t] [%c] @@@traceId=%X{TRACE_ID}@@@ %m%n"
       - name: httpRequestPattern

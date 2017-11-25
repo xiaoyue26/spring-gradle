@@ -49,6 +49,10 @@ dependencies {
     // 第三章:日志
     compile('org.springframework.boot:spring-boot-starter-log4j2')
     compile('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.6.0-rc4')
+    // 异步日志:
+    compile group: 'com.lmax', name: 'disruptor', version: '3.3.7'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-web', version: '2.7'
+
 
 
     //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")

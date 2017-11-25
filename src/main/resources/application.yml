@@ -9,20 +9,14 @@ amazon:
 
 
 
-spring.profiles.active: test
+spring.profiles.active: local
 
 # 本地环境
 ---
 spring:
     profiles: local
 # path和file只能指定一个. 指定path的时候,文件名为spring.log
-logging:
-  path: /Users/xiaoyue26/learn/logs
-  level:
-    root: INFO
-    org:
-      springframework:
-        security: INFO
+logging.config: classpath:log4j2.dev.yaml
 
 
 # 测试服务环境
@@ -31,3 +25,16 @@ spring:
     profiles: test
 
 logging.config: classpath:log4j2.test.yaml
+
+# test2
+---
+spring:
+    profiles: test2
+# path和file只能指定一个. 指定path的时候,文件名为spring.log
+logging:
+  path: /Users/xiaoyue26/learn/logs
+  level:
+    root: INFO
+    org:
+      springframework:
+        security: INFO

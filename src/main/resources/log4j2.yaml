@@ -6,3 +6,8 @@ Configuration:
       target: SYSTEM_OUT
       PatternLayout:
         pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%p] [%t] [%c] @@@traceId=%X{TRACE_ID}@@@ %m%n"
+  Loggers:
+        Root:
+          level: info
+          AppenderRef:
+            - ref: console

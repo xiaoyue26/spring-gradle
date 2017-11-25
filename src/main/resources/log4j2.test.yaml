@@ -2,12 +2,12 @@ Configutation:
   status: warn
 
   Appenders:
-    Console:
+    Console: # 控制台的appender
       name: CONSOLE
       target: SYSTEM_OUT
       PatternLayout:
         Pattern: "%d{ISO8601} %-5p [%c{3}] [%t] %m%n"
-    RollingFile:
+    RollingFile: # 输出到文件,超过的归档
       - name: APPLICATION
         fileName: /Users/xiaoyue26/learn/logs/test.log
         filePattern: "/Users/xiaoyue26/learn/logs/$${date:yyyy-MM}/test-%d{yyyy-MM-dd}-%i.log.gz"
