@@ -71,6 +71,10 @@ exclude module: "spring-boot-starter-tomcat"
     * */
     // 第三章 安全:
     compile("org.springframework.boot:spring-boot-starter-security")
+    // 第四章: 单元测试:
+    testCompile("org.springframework.security:spring-security-test")
+    // 第四章: 使用selenium进行测试:
+    testCompile("org.seleniumhq.selenium:selenium-java:2.45.0")
 }
 
 /*jar {

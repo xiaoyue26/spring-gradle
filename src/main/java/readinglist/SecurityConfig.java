@@ -2,6 +2,7 @@ package readinglist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -34,18 +35,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(
               AuthenticationManagerBuilder auth) throws Exception {
-    auth
-      .userDetailsService(new UserDetailsService() {
-        @Override
-        public UserDetails loadUserByUsername(String username)
-            throws UsernameNotFoundException {
-          UserDetails userDetails = readerRepository.findOne(username);
-          if (userDetails != null) {
-            return userDetails;
-          }
-          throw new UsernameNotFoundException("User '" + username + "' not found.");
-        }
-      });
+    auth.userDetailsService(userDetailsService());
   }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsService() {
+            @Override
+            public UserDetails loadUserByUsername(String username)
+                    throws UsernameNotFoundException {
+                UserDetails userDetails = readerRepository.findOne(username);
+                if (userDetails != null) {
+                    return userDetails;
+                }
+                throw new UsernameNotFoundException("User '" + username + "' not found.");
+            }
+        };
+    }
+
 
 }
