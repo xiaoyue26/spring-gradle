@@ -37,6 +37,7 @@ public class ServerWebTests {
 
     @BeforeClass
     public static void openBrowser() {
+        // 下载chromedriver到某个目录下,然后代码里指定一下路径
         System.setProperty("webdriver.chrome.driver","/opt/real/chr/chromedriver");
         browser = new ChromeDriver();
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
