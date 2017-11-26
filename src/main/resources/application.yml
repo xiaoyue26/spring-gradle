@@ -10,11 +10,23 @@ amazon:
 
 
 spring.profiles.active: local
-spring:
-  datasource:
-  url: jdbc:mysql://localhost/readinglist
-  username: root
-  password: mysql
+#spring:
+#  datasource:
+#  url: jdbc:mysql://localhost:3306/readinglist
+#  username: root
+#  password: mysql
+
+spring.jpa.hibernate.ddl-auto: create-drop
+spring.datasource.primary.url: jdbc:mysql://localhost:3306/readinglist
+spring.datasource.primary.username: root
+spring.datasource.primary.password: mysql
+spring.datasource.primary.driver-class-name: com.mysql.jdbc.Driver
+
+spring.datasource.secondary.url: jdbc:mysql://localhost:3306/readinglist
+spring.datasource.secondary.username: root
+spring.datasource.secondary.password: mysql
+spring.datasource.secondary.driver-class-name: com.mysql.jdbc.Driver
+
 # 本地环境
 ---
 spring:
