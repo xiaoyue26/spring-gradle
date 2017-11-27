@@ -1,3 +1,5 @@
+package readinglist;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -24,7 +26,7 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryPrimary",
         transactionManagerRef="transactionManagerPrimary",
-        basePackages= { "readlinglist" }) //设置Repository所在位置
+        basePackages= { "readinglist" }) //设置Repository所在位置
 public class PrimaryConfig {
     @Autowired @Qualifier("primaryDataSource")
     private DataSource primaryDataSource;
@@ -41,7 +43,7 @@ public class PrimaryConfig {
         return builder
                 .dataSource(primaryDataSource)
                 .properties(getVendorProperties(primaryDataSource))
-                .packages("com.didispace.domain.p") //设置实体类所在位置
+                .packages("readinglist") //设置实体类所在位置
                 .persistenceUnit("primaryPersistenceUnit")
                 .build();
     }

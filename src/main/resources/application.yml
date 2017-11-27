@@ -17,12 +17,12 @@ spring.profiles.active: local
 #  password: mysql
 
 spring.jpa.hibernate.ddl-auto: create-drop
-spring.datasource.primary.url: jdbc:mysql://localhost:3306/readinglist
+spring.datasource.primary.url: jdbc:mysql://localhost:3306/readinglist?characterEncoding=utf8&useSSL=true
 spring.datasource.primary.username: root
 spring.datasource.primary.password: mysql
 spring.datasource.primary.driver-class-name: com.mysql.jdbc.Driver
 
-spring.datasource.secondary.url: jdbc:mysql://localhost:3306/readinglist
+spring.datasource.secondary.url: jdbc:mysql://localhost:3306/second_reading?characterEncoding=utf8&useSSL=true
 spring.datasource.secondary.username: root
 spring.datasource.secondary.password: mysql
 spring.datasource.secondary.driver-class-name: com.mysql.jdbc.Driver
