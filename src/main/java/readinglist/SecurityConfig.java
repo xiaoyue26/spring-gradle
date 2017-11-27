@@ -17,26 +17,26 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @ComponentScan
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Autowired
-  private ReaderRepository readerRepository;
-  
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http
-      .authorizeRequests()
-        .antMatchers("/").access("hasRole('READER')")
-        .antMatchers("/**").permitAll()
-      .and()
-      .formLogin()
-        .loginPage("/login")
-        .failureUrl("/login?error=true");
-  }
-  
-  @Override
-  protected void configure(
-              AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(userDetailsService());
-  }
+    @Autowired
+    private ReaderRepository readerRepository;
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .antMatchers("/").access("hasRole('READER')")
+                .antMatchers("/**").permitAll()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .failureUrl("/login?error=true");
+    }
+
+    @Override
+    protected void configure(
+            AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService());
+    }
 
     @Bean
     public UserDetailsService userDetailsService() {

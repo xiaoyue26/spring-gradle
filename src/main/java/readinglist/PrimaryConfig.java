@@ -22,7 +22,8 @@ import java.util.Map;
  * Created by xiaoyue26 on 17/11/26.
  */
 @EnableTransactionManagement
-@Configuration
+@EnableAutoConfiguration
+@ComponentScan
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryPrimary",
         transactionManagerRef="transactionManagerPrimary",

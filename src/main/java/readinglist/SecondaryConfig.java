@@ -2,9 +2,11 @@ package readinglist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -19,7 +21,8 @@ import java.util.Map;
 /**
  * Created by xiaoyue26 on 17/11/27.
  */
-@Configuration
+@EnableAutoConfiguration
+@ComponentScan
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactorySecondary",
