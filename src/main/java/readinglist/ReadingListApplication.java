@@ -26,7 +26,7 @@ public class ReadingListApplication extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void addArgumentResolvers(
+    public void addArgumentResolvers(// 增加前端参数解析器
             List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(new ReaderHandlerMethodArgumentResolver());
     }

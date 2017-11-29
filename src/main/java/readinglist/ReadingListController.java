@@ -40,7 +40,7 @@ public class ReadingListController {
 
 
 	@RequestMapping(method=RequestMethod.GET)
-	public String readersBooks(Reader reader, Model model) {
+	public String readersBooks(Reader reader, Model model) {// 由于参数解析器,解析出了Reader对象
 		List<Book> readingList = readingListRepository.findByReader(reader);
 		if (readingList != null) {
 			model.addAttribute("books", readingList);
@@ -51,7 +51,7 @@ public class ReadingListController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	public String addToReadingList(Reader reader, Book book) {
+	public String addToReadingList(Reader reader, Book book) {// 由于参数解析器,解析出了Reader对象
 		book.setReader(reader);
 		readingListRepository.save(book);
 		return "redirect:/";

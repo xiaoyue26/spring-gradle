@@ -77,8 +77,13 @@ exclude module: "spring-boot-starter-tomcat"
     testCompile("org.seleniumhq.selenium:selenium-java:2.45.0")
     // 11.26: 配置mysql
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.44'
+    // 11.28 尝试增加依赖:
+    //optional "org.springframework.boot:spring-boot-configuration-processor"
+    compile "org.springframework.boot:spring-boot-configuration-processor"
+
 
 }
+//compileJava.dependsOn(processResources)
 
 /*jar {
     manifest {
