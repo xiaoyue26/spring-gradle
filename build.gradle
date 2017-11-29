@@ -80,7 +80,7 @@ exclude module: "spring-boot-starter-tomcat"
     // 11.28 尝试增加依赖:
     //optional "org.springframework.boot:spring-boot-configuration-processor"
     compile "org.springframework.boot:spring-boot-configuration-processor"
-
+    //compile "org.springframework:spring-context-support"
 
 }
 //compileJava.dependsOn(processResources)

@@ -1,4 +1,4 @@
-package readinglist;
+package readinglist.properties;
 
 import java.util.Map;
 

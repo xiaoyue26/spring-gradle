@@ -1,4 +1,4 @@
-package readinglist;
+package readinglist.storage;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

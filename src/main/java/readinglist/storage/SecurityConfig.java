@@ -1,4 +1,4 @@
-package readinglist;
+package readinglist.storage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan
+@ComponentScan("readinglist.storage")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
