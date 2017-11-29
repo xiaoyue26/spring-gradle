@@ -1,4 +1,4 @@
-package readinglist.configure;
+package com.xiaoyue.nov.configure;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;

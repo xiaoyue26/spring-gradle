@@ -1,7 +1,9 @@
-package readinglist.ctrl;
+package com.xiaoyue.nov.ctrl;
 
 import java.util.List;
 
+import com.xiaoyue.nov.storage.Reader;
+import com.xiaoyue.nov.storage.ReadingListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -10,10 +12,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import readinglist.properties.AmazonProperties;
-import readinglist.storage.Book;
-import readinglist.storage.Reader;
-import readinglist.storage.ReadingListRepository;
+import com.xiaoyue.nov.properties.AmazonProperties;
+import com.xiaoyue.nov.storage.Book;
 
 @Controller
 @RequestMapping("/")

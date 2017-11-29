@@ -1,4 +1,4 @@
-package readinglist.properties;
+package com.xiaoyue.nov.properties;
 
 import java.util.Map;
 

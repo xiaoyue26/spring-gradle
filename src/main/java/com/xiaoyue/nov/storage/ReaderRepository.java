@@ -1,4 +1,4 @@
-package readinglist.storage;
+package com.xiaoyue.nov.storage;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

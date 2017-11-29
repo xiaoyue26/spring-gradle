@@ -1,5 +1,6 @@
-package readinglist.storage;
+package com.xiaoyue.nov.configure;
 
+import com.xiaoyue.nov.storage.ReaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -14,8 +15,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan("readinglist.storage")
+@ComponentScan("com.xiaoyue.nov.storage")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    /** 不知道为啥这个类非得和repository在一个包里
+     *  可能是和Bean的扫描顺序有关.
+     */
 
     @Autowired
     private ReaderRepository readerRepository;

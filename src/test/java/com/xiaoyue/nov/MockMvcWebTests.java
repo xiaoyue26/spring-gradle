@@ -1,3 +1,5 @@
+package com.xiaoyue.nov;
+
 import static org.hamcrest.Matchers.*;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -16,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import readinglist.storage.Reader;
+import com.xiaoyue.nov.storage.Reader;
 
 /**
  * Created by xiaoyue26 on 17/11/26.

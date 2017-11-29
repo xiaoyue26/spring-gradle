@@ -1,3 +1,5 @@
+package com.xiaoyue.nov;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Ignore;
@@ -10,7 +12,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Value;
-import readinglist.storage.Reader;
+import com.xiaoyue.nov.storage.Reader;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.*;

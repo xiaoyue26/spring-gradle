@@ -1,4 +1,4 @@
-package readinglist.storage;
+package com.xiaoyue.nov.storage;
 
 import java.util.List;
 

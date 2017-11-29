@@ -1,5 +1,8 @@
+package com.xiaoyue.nov;
+
 import java.util.List;
 
+import com.xiaoyue.nov.ctrl.ReaderHandlerMethodArgumentResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -8,10 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import readinglist.ctrl.ReaderHandlerMethodArgumentResolver;
 
 @SpringBootApplication
-@ComponentScan("readinglist")
 public class ReadingListApplication extends WebMvcConfigurerAdapter {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
