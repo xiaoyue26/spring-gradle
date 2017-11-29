@@ -10,6 +10,9 @@ amazon:
 
 
 spring.profiles.active: local
+endpoints.sensitive: true
+management.context-path: /admin
+management.security.enabled: true
 #spring:
 #  datasource:
 #  url: jdbc:mysql://localhost:3306/readinglist
