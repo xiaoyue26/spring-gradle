@@ -17,9 +17,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @EnableAutoConfiguration
 @ComponentScan("com.xiaoyue.nov.storage")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    /** 不知道为啥这个类非得和repository在一个包里
-     *  可能是和Bean的扫描顺序有关.
-     */
 
     @Autowired
     private ReaderRepository readerRepository;
@@ -40,7 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(
             AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService());
+        auth.userDetailsService(userDetailsService())
+        .and()
+        .inMemoryAuthentication()
+        .withUser("admin").password("admin").roles("ADMIN","READER");
     }
 
     @Bean
