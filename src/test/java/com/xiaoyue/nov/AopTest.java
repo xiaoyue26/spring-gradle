@@ -1,6 +1,6 @@
 package com.xiaoyue.nov;
 
-import com.xiaoyue.nov.storage.IUserDAO;
+import com.xiaoyue.nov.concert.Performance;
 import com.xiaoyue.nov.storage.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,19 +10,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 /**
- * Created by xiaoyue26 on 17/11/30.
+ * Created by xiaoyue26 on 17/12/1.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = ReadingListApplication.class)
 @SpringBootTest(classes = ReadingListApplication.class)
 @WebAppConfiguration
-public class UserTest {
+public class AopTest {
     @Autowired
-    private IUserDAO dao;
+    private Performance performance;
 
-    @Test//查（简单查询，返回对象）
-    public void demo5() {
-        User user = dao.searchUser(1);
-        System.out.println(user.getUsername());
+    @Test
+    public void testAop() {
+        performance.perform();
     }
 }
