@@ -25,8 +25,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/admin/*").access("hasRole('ACTUATOR')")
-                .antMatchers("/").access("hasRole('READER')")
+                .antMatchers("/admin/*").access(
+                "hasRole('ACTUATOR') and hasRole('READER')")
+                .antMatchers("/").hasRole("READER")
                 .antMatchers("/**").permitAll()
                 .and()
                 .formLogin()
@@ -38,9 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(
             AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService())
-        .and()
-        .inMemoryAuthentication()
-        .withUser("admin").password("admin").roles("ADMIN","READER");
+                .and()
+                .inMemoryAuthentication()
+                .withUser("admin").password("admin").roles("ADMIN", "READER");
     }
 
     @Bean
