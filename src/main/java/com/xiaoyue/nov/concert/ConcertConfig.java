@@ -21,4 +21,9 @@ public class ConcertConfig {
     public Performance performance() {
         return new Performance();
     }
+
+    @Bean
+    public AudienceAround audienceAround() {
+        return new AudienceAround();
+    }
 }

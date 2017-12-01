@@ -1,7 +1,6 @@
 package com.xiaoyue.nov.concert;
 
 import org.aspectj.lang.annotation.*;
-import org.springframework.context.annotation.Bean;
 
 /**
  * Created by xiaoyue26 on 17/12/1.
