@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.cd;
+package com.xiaoyue.nov.practice.cd;
 
 /**
  * Created by xiaoyue26 on 17/12/1.

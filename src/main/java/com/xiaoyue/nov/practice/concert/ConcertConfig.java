@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.concert;
+package com.xiaoyue.nov.practice.concert;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

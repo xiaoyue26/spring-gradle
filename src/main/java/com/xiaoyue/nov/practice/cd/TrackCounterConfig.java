@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.cd;
+package com.xiaoyue.nov.practice.cd;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

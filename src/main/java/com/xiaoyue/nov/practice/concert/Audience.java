@@ -1,15 +1,17 @@
-package com.xiaoyue.nov.concert;
+package com.xiaoyue.nov.practice.concert;
 
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 
 /**
  * Created by xiaoyue26 on 17/12/1.
  */
 @Aspect
+@Order(1)
 public class Audience {
 
 
-    @Pointcut("execution(* com.xiaoyue.nov.concert.Performance.perform(..))")
+    @Pointcut("execution(* com.xiaoyue.nov.practice.concert.Performance.perform(..))")
     public void performance() {
     }
 

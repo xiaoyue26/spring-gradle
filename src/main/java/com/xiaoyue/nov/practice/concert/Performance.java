@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.concert;
+package com.xiaoyue.nov.practice.concert;
 
 /**
  * Created by xiaoyue26 on 17/12/1.

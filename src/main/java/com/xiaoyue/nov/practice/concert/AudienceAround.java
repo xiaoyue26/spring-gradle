@@ -1,17 +1,19 @@
-package com.xiaoyue.nov.concert;
+package com.xiaoyue.nov.practice.concert;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 
 /**
  * Created by xiaoyue26 on 17/12/1.
  * 用@Around注解,可能会阻塞对方
  */
 @Aspect
+@Order(2)
 public class AudienceAround {
-    @Pointcut("execution(* com.xiaoyue.nov.concert.Performance.perform(..))")
+    @Pointcut("execution(* com.xiaoyue.nov.practice.concert.Performance.perform(..))")
     public void performance() {
     }
 

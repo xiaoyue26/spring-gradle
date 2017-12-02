@@ -1,35 +1,24 @@
-package com.xiaoyue.nov;
+package com.xiaoyue26.practice;
 
-import com.xiaoyue.nov.cd.CompactDisc;
-import com.xiaoyue.nov.cd.TrackCounter;
-import com.xiaoyue.nov.concert.Performance;
+import com.xiaoyue.nov.ReadingListApplication;
+import com.xiaoyue.nov.practice.cd.CompactDisc;
+import com.xiaoyue.nov.practice.cd.TrackCounter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 /**
- * Created by xiaoyue26 on 17/12/1.
+ * Created by xiaoyue26 on 17/12/2.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-//@SpringApplicationConfiguration(classes = ReadingListApplication.class)
 @SpringBootTest(classes = ReadingListApplication.class)
-@WebAppConfiguration
-public class AopTest {
-    @Autowired
-    private Performance performance;
-
+public class AopWithArgsTest {
     @Autowired
     private CompactDisc compactDisc;
     @Autowired
     private TrackCounter counter;
-
-    @Test
-    public void testAop() {
-        performance.perform();
-    }
 
     @Test
     public void testAopWithArgs() {

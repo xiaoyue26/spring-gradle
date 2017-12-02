@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.cd;
+package com.xiaoyue.nov.practice.cd;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -14,7 +14,7 @@ import java.util.Map;
 public class TrackCounter {
     private Map<Integer, Integer> trackCounts = new HashMap<>();
 
-    @Pointcut("execution(* com.xiaoyue.nov.cd.CompactDisc.playTrack(int))"
+    @Pointcut("execution(* com.xiaoyue.nov.practice.cd.CompactDisc.playTrack(int))"
             + "&& args(trackNumber)"
     )
     public void trackPlayed(int trackNumber) {
