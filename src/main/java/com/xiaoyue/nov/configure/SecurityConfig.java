@@ -8,10 +8,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
 @Configuration
 @EnableAutoConfiguration
@@ -21,7 +23,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private ReaderRepository readerRepository;
 
-    @Override
+    @Override // 配置Spring Security的Filter链
+    public void configure(WebSecurity webSecurity) throws Exception {
+
+    }
+
+    @Override// 配置如何通过拦截器保护请求
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
@@ -35,13 +42,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureUrl("/login?error=true");
     }
 
-    @Override
+    @Override// 配置user-detail服务
     protected void configure(
             AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService())
-                .and()
+                /*.and()
                 .inMemoryAuthentication()
-                .withUser("admin").password("admin").roles("ADMIN", "READER");
+                .withUser("admin").password("admin").roles("ADMIN", "READER")*/
+        ;
+
+        // use jdbc:
+        /*auth.jdbcAuthentication().authoritiesByUsernameQuery(
+                "select * from xxx"
+        ).passwordEncoder(new StandardPasswordEncoder("53cr3t"));*/
     }
 
     @Bean
