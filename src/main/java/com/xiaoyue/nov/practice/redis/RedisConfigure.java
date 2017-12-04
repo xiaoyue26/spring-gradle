@@ -15,15 +15,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  */
 @Configuration
 public class RedisConfigure {
-    /*@Bean
-    @Primary
-    public RedisConnectionFactory redisCF() {
-        JedisConnectionFactory cf = new JedisConnectionFactory();
-        cf.setHostName("localhost");
-        cf.setPort(6379);
-        cf.setPassword("redis123");
-        return cf;
-    }*/
 
     @Bean
     public RedisTemplate<String, Product> redisTemplate(RedisConnectionFactory cf) {
