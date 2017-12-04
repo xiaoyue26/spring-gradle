@@ -39,7 +39,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .failureUrl("/login?error=true");
+                .failureUrl("/login?error=true")
+                .and()
+                .rememberMe()
+                .tokenValiditySeconds(60 * 60)
+                .key("rememberkey");
+                /*.and().requiresChannel()
+                .antMatchers("/login")
+                .requiresSecure()*/
+        ;
     }
 
     @Override// 配置user-detail服务
