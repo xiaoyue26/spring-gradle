@@ -1,5 +1,7 @@
 package com.xiaoyue.nov.storage;
 
+import org.springframework.cache.annotation.Cacheable;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
