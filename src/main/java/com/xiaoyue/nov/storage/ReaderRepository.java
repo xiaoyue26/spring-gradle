@@ -5,7 +5,9 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ReaderRepository extends JpaRepository<Reader, String> {
+//<Reader,String>  返回对象类型和对象的id类型
+public interface ReaderRepository extends JpaRepository<Reader, String>
+        , ReaderSweeper {
 
     @Query("select username,password,fullname from Reader")
     List<Reader> findAllGmailReaders();
