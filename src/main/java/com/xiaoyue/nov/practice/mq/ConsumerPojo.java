@@ -9,19 +9,19 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by xiaoyue26 on 17/12/5.
  */
-//@Component
-public class Receiver {
+@Component
+public class ConsumerPojo {
 
-    /*private CountDownLatch latch = new CountDownLatch(1);
+    private CountDownLatch latch = new CountDownLatch(1);//只需要计数一次的闭锁
 
     public void receiveMessage(String message) {
-        System.out.println("Received <" + message + ">");
-        latch.countDown();
+        System.out.println("[ConsumerPojo] Received <" + message + ">");
+        latch.countDown();// 打开闭锁
     }
 
     public CountDownLatch getLatch() {
-        return latch;
-    }*/
+        return latch;//向外界返回闭锁
+    }
 
 
 }

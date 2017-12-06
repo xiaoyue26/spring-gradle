@@ -12,8 +12,12 @@ import java.util.Date;
  */
 @Component
 public class Producer {
-    @Autowired
-    private AmqpTemplate rabbitTemplate;
+    private final AmqpTemplate rabbitTemplate;
+
+    @Autowired // 尽量使用构造函数注入
+    public Producer(AmqpTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
     public void send() {
         String msg = "hello " + new Date();

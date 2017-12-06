@@ -9,11 +9,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * Created by xiaoyue26 on 17/12/5.
+ * 装配好的listener自动会跑(不知道是哪里调用的)
  */
 @Component
 @RabbitListener(queues = RabbitMQConfig.QUEUE_HELLO)
 public class Consumer {
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RabbitHandler
     public void process(String hello) {
