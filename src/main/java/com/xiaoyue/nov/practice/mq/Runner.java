@@ -11,8 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by xiaoyue26 on 17/12/5.
+ * 加载好applicationContext以后,自动运行的代码.
+ * 打开@Component的话就会运行.
  */
-@Component
+//@Component
 public class Runner implements CommandLineRunner {
     private final RabbitTemplate rabbitTemplate;
     private final ConsumerPojo consumer;

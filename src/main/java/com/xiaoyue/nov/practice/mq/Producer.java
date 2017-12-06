@@ -23,6 +23,8 @@ public class Producer {
         String msg = "hello " + new Date();
         System.out.println("Sender : " + msg);
         // 只指定了routing key , 自动转发到对应队列.
-        this.rabbitTemplate.convertAndSend("hello", msg);
+        this.rabbitTemplate.convertAndSend(RabbitMQConfig.QUEUE_HELLO, msg);
+        //指定exchange和routingkey
+        //this.rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.QUEUE_HELLO, msg);
     }
 }

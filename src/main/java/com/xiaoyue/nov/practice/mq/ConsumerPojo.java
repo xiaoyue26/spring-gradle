@@ -8,6 +8,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by xiaoyue26 on 17/12/5.
+ * 配置里设定监听queue2
  */
 @Component
 public class ConsumerPojo {
