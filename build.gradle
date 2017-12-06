@@ -85,6 +85,9 @@ exclude module: "spring-boot-starter-tomcat"
     compile "redis.clients:jedis:2.9.0"
     compile 'org.springframework.boot:spring-boot-starter-data-redis'
 
+    // 增加rabitmap支持
+    compile 'org.springframework.boot:spring-boot-starter-amqp'
+
 
 }
 //compileJava.dependsOn(processResources)
