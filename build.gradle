@@ -88,6 +88,10 @@ exclude module: "spring-boot-starter-tomcat"
     // 增加rabitmap支持
     compile 'org.springframework.boot:spring-boot-starter-amqp'
 
+    // 增加邮件支持:
+    compile 'org.springframework.boot:spring-boot-starter-mail'
+    //compile "javax.mail:mail:$javaxMailVersion"
+
 
 }
 //compileJava.dependsOn(processResources)

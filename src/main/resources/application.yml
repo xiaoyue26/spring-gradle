@@ -46,7 +46,18 @@ spring:
 
 
 
+# Mail 配置
 
+spring.mail.username: no-reply@fenbi.com
+spring.mail.password: PyNGTB9ThPhUH9
+spring.mail.port: 25 # SSL  465
+spring.mail.protocol: smtp
+spring.mail.host: smtp.exmail.qq.com
+spring.mail.properties.mail.smtp.auth: true
+#spring.mail.properties.mail.smtp.starttls.enable: true
+#spring.mail.properties.mail.smtp.starttls.required: true
+#spring.mail.properties.mail.smtp.checkserveridentity: true
+#spring.mail.properties.mail.smtps.ssl.trust: "*"
 
 # 本地环境
 ---
