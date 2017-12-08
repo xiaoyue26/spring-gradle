@@ -14,9 +14,8 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
-public class ReadingListApplication extends WebMvcConfigurerAdapter {
+public class ReadingListApplication {
 
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(ReadingListApplication.class);
@@ -25,24 +24,5 @@ public class ReadingListApplication extends WebMvcConfigurerAdapter {
         application.run(args);
     }
 
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-
-        registry.addViewController("/login").setViewName("login");
-        logger.info("add login controller ok ");
-        registry.addViewController("/home").setViewName("home");
-        logger.info("add home controller ok ");
-    }
-
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
-    }
-    @Override
-    public void addArgumentResolvers(// 增加前端参数解析器
-                                     List<HandlerMethodArgumentResolver> argumentResolvers) {
-        argumentResolvers.add(new ReaderHandlerMethodArgumentResolver());
-    }
 
 }
