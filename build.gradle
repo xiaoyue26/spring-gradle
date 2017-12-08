@@ -92,6 +92,15 @@ exclude module: "spring-boot-starter-tomcat"
     compile 'org.springframework.boot:spring-boot-starter-mail'
     //compile "javax.mail:mail:$javaxMailVersion"
 
+    // 增加 webjars支持:
+    compile 'org.webjars:bootstrap:3.3.7-1'
+    compile 'org.webjars:jquery:2.0.3-1'
+    compile 'org.webjars:sockjs-client:0.3.4'
+    compile 'org.webjars:stomp-websocket:2.3.0'
+
+    // 增加websocket支持:
+    compile 'org.springframework.boot:spring-boot-starter-websocket'
+
 
 }
 //compileJava.dependsOn(processResources)

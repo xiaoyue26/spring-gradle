@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -29,8 +30,15 @@ public class ReadingListApplication extends WebMvcConfigurerAdapter {
 
         registry.addViewController("/login").setViewName("login");
         logger.info("add login controller ok ");
+        registry.addViewController("/home").setViewName("home");
+        logger.info("add home controller ok ");
     }
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
     @Override
     public void addArgumentResolvers(// 增加前端参数解析器
                                      List<HandlerMethodArgumentResolver> argumentResolvers) {
