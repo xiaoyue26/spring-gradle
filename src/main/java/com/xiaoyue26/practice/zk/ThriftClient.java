@@ -20,8 +20,8 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by xiaoyue26 on 17/12/11.
  */
-public class ThriftClinet implements Watcher {
-    private static Logger logger = LoggerFactory.getLogger(ThriftClinet.class);
+public class ThriftClient implements Watcher {
+    private static Logger logger = LoggerFactory.getLogger(ThriftClient.class);
     private String serverIp;
     private String serverPort;
     private String servername;
@@ -34,7 +34,7 @@ public class ThriftClinet implements Watcher {
         connectedSignal.await();
         this.servername = servername;
         updateServer();
-        ThriftClinet.logger.info("初始化完成");
+        ThriftClient.logger.info("初始化完成");
     }
 
     private void updateServer() throws KeeperException, InterruptedException, JSONException {
@@ -50,18 +50,18 @@ public class ThriftClinet implements Watcher {
             // 如果条件成立，说明节点不存在
             // 创建的这个节点是一个“永久状态”的节点
             if (pathStat == null) {
-                ThriftClinet.logger.info("客户端创立Service");
+                ThriftClient.logger.info("客户端创立Service");
                 this.zk.create("/Service", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
                 return;
             }
         } catch (Exception e) {
-            ThriftClinet.logger.error(e.getMessage());
+            ThriftClient.logger.error(e.getMessage());
             System.exit(-1);
         }
         // 获取服务列表
         List<String> serviceList = this.zk.getChildren("/Service", false);
         if (serviceList == null || serviceList.isEmpty()) {
-            ThriftClinet.logger.info("未发现相关服务，客户端退出");
+            ThriftClient.logger.info("未发现相关服务，客户端退出");
             return;
         }
         // 查找所需的服务是否存在
@@ -77,11 +77,11 @@ public class ThriftClinet implements Watcher {
         if (isFound) {
             data = this.zk.getData("/Service/" + this.servername, false, null);
         } else {
-            ThriftClinet.logger.info("未发现相关服务，客户端退出");
+            ThriftClient.logger.info("未发现相关服务，客户端退出");
             return;
         }
         if (data == null || data.length == 0) {
-            ThriftClinet.logger.info("没有发现有效数据，客户端退出");
+            ThriftClient.logger.info("没有发现有效数据，客户端退出");
             return;
         }
 
@@ -112,14 +112,14 @@ public class ThriftClinet implements Watcher {
         }
     }
     public static void main(String[] args) {
-        ThriftClinet studentClinet=new ThriftClinet();
+        ThriftClient studentClinet=new ThriftClient();
         /**
          * studnetService 测试
          */
         try {
             studentClinet.init(ServiceStart.serviceNames[0]);
             if(studentClinet.serverIp==null||studentClinet.serverPort==null){
-                ThriftClinet.logger.info("没有发现有效数据，客户端退出");
+                ThriftClient.logger.info("没有发现有效数据，客户端退出");
             }
             //如果是非阻塞型  需要使用
             TTransport tSocket = new TFramedTransport(new TSocket(studentClinet.serverIp,
@@ -137,7 +137,7 @@ public class ThriftClinet implements Watcher {
 
         } catch (Exception e) {
             e.printStackTrace();
-            ThriftClinet.logger.info("出现异常，客户端退出");
+            ThriftClient.logger.info("出现异常，客户端退出");
         }
 
     }
