@@ -100,6 +100,13 @@ exclude module: "spring-boot-starter-tomcat"
 
     // 增加websocket支持:
     compile 'org.springframework.boot:spring-boot-starter-websocket'
+    
+    // 增加reactor2支持: // websocket stomp 注意org.projectreactor是reactor1;io.projectxx则是reactor2.
+    compile 'io.projectreactor:reactor-core:2.0.8.RELEASE'
+    compile 'io.projectreactor:reactor-net:2.0.8.RELEASE'
+    compile group: 'io.projectreactor.ipc', name: 'reactor-netty', version: '0.7.2.RELEASE'
+
+
 
 
 }

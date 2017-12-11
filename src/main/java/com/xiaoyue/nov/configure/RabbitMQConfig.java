@@ -37,7 +37,7 @@ public class RabbitMQConfig {
         return new TopicExchange(EXCHANGE_NAME);
     }
 
-    @Bean
+    @Bean // 创建一条路由规则: 到达exchange以后,routingkey是queue2的,转发到queue2上.
     Binding binding(@Qualifier(QUEUE_2) Queue queue, TopicExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(QUEUE_2);
     }

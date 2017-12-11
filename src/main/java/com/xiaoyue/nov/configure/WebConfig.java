@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -26,6 +27,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         logger.info("add login controller ok ");
         registry.addViewController("/home").setViewName("home");
         logger.info("add home controller ok ");
+        registry.addViewController("/msg").setViewName("msg");
+        logger.info("add msg controller ok ");
     }
 
     @Override

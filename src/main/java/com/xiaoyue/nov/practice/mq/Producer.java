@@ -22,7 +22,7 @@ public class Producer {
     public void send() {
         String msg = "hello " + new Date();
         System.out.println("Sender : " + msg);
-        // 只指定了routing key , 自动转发到对应队列.
+        // 只指定了routing key , 默认转发到名为""的exchange,然后它默认会轮询所有queue是否接受.
         this.rabbitTemplate.convertAndSend(RabbitMQConfig.QUEUE_HELLO, msg);
         //指定exchange和routingkey
         //this.rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.QUEUE_HELLO, msg);

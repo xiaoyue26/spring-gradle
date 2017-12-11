@@ -40,8 +40,10 @@ public class RabbitMqTest {
     private ConsumerPojo consumer;
 
     @Test
-    public void hello2() throws Exception {// 发到名为""spring-boot-exchange"的exchange,queue2能收到.
+    public void hello2() throws Exception {
         System.out.println("Sending message...");
+        // 发到名为""spring-boot-exchange"的exchange,
+        // 根据配置中创建的路由,根据routingkey会转发到queue2.
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.QUEUE_2, "Hello from RabbitMQ!");
         consumer.getLatch().await(10000, TimeUnit.MILLISECONDS);
     }
