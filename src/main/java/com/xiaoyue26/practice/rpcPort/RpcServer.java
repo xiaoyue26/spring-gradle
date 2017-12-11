@@ -1,4 +1,4 @@
-package com.xiaoyue26.practice;
+package com.xiaoyue26.practice.rpcPort;
 
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.server.TServer;
@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Created by xiaoyue26 on 17/12/11.
+ * 监听9000端口,提供服务,同机器通信(单机).
  */
 public class RpcServer {
     public void test1() {

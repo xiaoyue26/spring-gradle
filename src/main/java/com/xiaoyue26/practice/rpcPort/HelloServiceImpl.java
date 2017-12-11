@@ -1,4 +1,4 @@
-package com.xiaoyue26.practice;
+package com.xiaoyue26.practice.rpcPort;
 
 import org.apache.thrift.TException;
 

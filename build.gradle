@@ -108,6 +108,9 @@ exclude module: "spring-boot-starter-tomcat"
 
     // 增加thrift支持:
     compile 'org.apache.thrift:libthrift:0.10.0'
+    // 增加zookeeper支持:
+    compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.4.11'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
 
 
 
