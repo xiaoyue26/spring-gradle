@@ -106,6 +106,8 @@ exclude module: "spring-boot-starter-tomcat"
     compile 'io.projectreactor:reactor-net:2.0.8.RELEASE'
     compile group: 'io.projectreactor.ipc', name: 'reactor-netty', version: '0.7.2.RELEASE'
 
+    // 增加thrift支持:
+    compile 'org.apache.thrift:libthrift:0.10.0'
 
 
 
