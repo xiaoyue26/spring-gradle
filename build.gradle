@@ -15,6 +15,7 @@ repositories {
     maven { url 'http://conjars.org/repo' }//自定义maven仓库地址
     jcenter()//新的中央远程仓库，兼容maven中心仓库
     mavenCentral()
+    maven { url 'http://maven.zhenguanyu.com/content/repositories/releases/'}
 }
 
 mainClassName = 'readinglist.ReadingListApplication'
@@ -113,8 +114,6 @@ exclude module: "spring-boot-starter-tomcat"
     // StringUtils:
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     //compile 'commons-lang:commons-lang:2.6'
-
-
 
 }
 //compileJava.dependsOn(processResources)
