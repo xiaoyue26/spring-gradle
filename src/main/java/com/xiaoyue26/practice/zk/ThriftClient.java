@@ -27,10 +27,11 @@ public class ThriftClient implements Watcher {
     private String servername;
     private CountDownLatch connectedSignal = new CountDownLatch(1);//用于建立连接
     private ZooKeeper zk;
+    private String connectString = "127.0.0.1:2181";
 
     private void init(String servername) throws IOException, KeeperException, InterruptedException, JSONException {
         // 连接到zk服务器集群，添加默认的watcher监听
-        this.zk = new ZooKeeper("127.0.0.1:2181", 120000, this);
+        this.zk = new ZooKeeper(connectString, 120000, this);
         connectedSignal.await();
         this.servername = servername;
         updateServer();
@@ -38,15 +39,13 @@ public class ThriftClient implements Watcher {
     }
 
     private void updateServer() throws KeeperException, InterruptedException, JSONException {
-        this.serverIp=null;
-        this.serverPort=null;
+        this.serverIp = null;
+        this.serverPort = null;
         /*
-         *
          * 判断服务根节点是否存在
          */
-        Stat pathStat = null;
         try {
-            pathStat = this.zk.exists("/Service", false);
+            Stat pathStat = this.zk.exists("/Service", false);
             // 如果条件成立，说明节点不存在
             // 创建的这个节点是一个“永久状态”的节点
             if (pathStat == null) {
@@ -92,8 +91,8 @@ public class ThriftClient implements Watcher {
 
     @Override
     public void process(WatchedEvent event) {
-//建立连接用
-        if(event.getState()== Event.KeeperState.SyncConnected){
+        //建立连接用
+        if (event.getState() == Event.KeeperState.SyncConnected) {
             connectedSignal.countDown();
             return;
         }
@@ -111,23 +110,22 @@ public class ThriftClient implements Watcher {
             }
         }
     }
+
     public static void main(String[] args) {
-        ThriftClient studentClinet=new ThriftClient();
-        /**
-         * studnetService 测试
-         */
+        ThriftClient obj = new ThriftClient();
+
         try {
-            studentClinet.init(ServiceStart.serviceNames[0]);
-            if(studentClinet.serverIp==null||studentClinet.serverPort==null){
+            obj.init(ServiceStart.serviceNames[0]);
+            if (obj.serverIp == null || obj.serverPort == null) {
                 ThriftClient.logger.info("没有发现有效数据，客户端退出");
             }
             //如果是非阻塞型  需要使用
-            TTransport tSocket = new TFramedTransport(new TSocket(studentClinet.serverIp,
-                    Integer.parseInt(studentClinet.serverPort),  30000));
+            TTransport tSocket = new TFramedTransport(new TSocket(obj.serverIp,
+                    Integer.parseInt(obj.serverPort), 30000));
             //设置封装协议
             TBinaryProtocol protocol = new TBinaryProtocol(tSocket);
             //建立调用client
-            HelloService.Client client=new HelloService.Client(protocol);
+            HelloService.Client client = new HelloService.Client(protocol);
             //准备传输
             tSocket.open();
             //正式调用接口

@@ -63,8 +63,11 @@ spring.mail.properties.mail.smtp.auth: true
 # zk配置:
 # Rpc Server 配置
 rpcServer:
-    port: 5000
-    zkNode: /hello-service/rpc/v1 # Note: 修改需要同步改 PipeRedisClientClientConst.ZK_NODE 常量
+    helloService:
+      host: localhost
+      port: 5000
+      zkNode: /hello-service/rpc/v1
+      connectString: localhost:2181
 
 zkServers: localhost,localhost
 

@@ -111,6 +111,13 @@ exclude module: "spring-boot-starter-tomcat"
     compile 'org.apache.thrift:libthrift:0.10.0'
     // 增加zookeeper支持:
     compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.4.11'
+    // 增加zk客户端:
+    //compile 'org.apache.curator:curator-framework:3.3.0'
+    compile group: 'org.apache.curator', name: 'curator-framework', version: '4.0.0'
+    compile group: 'org.apache.curator', name: 'curator-recipes', version: '4.0.0'
+
+
+
     // StringUtils:
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     //compile 'commons-lang:commons-lang:2.6'
