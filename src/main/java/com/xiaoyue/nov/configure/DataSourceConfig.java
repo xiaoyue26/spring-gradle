@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 /**
  * Created by xiaoyue26 on 17/11/26.
+ * 启用这个的话,就用的是tomcat的连接池.
  */
 //@Configuration
 public class DataSourceConfig {

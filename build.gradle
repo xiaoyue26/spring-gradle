@@ -125,6 +125,7 @@ exclude module: "spring-boot-starter-tomcat"
 
     // 增加数据库连接池:
     compile 'com.alibaba:druid-spring-boot-starter:1.1.6'
+    compile 'com.alibaba:druid:1.1.6'
 
 
 }
