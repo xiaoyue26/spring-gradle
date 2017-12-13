@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import javax.sql.DataSource;
+
 /**
  * Created by xiaoyue26 on 17/12/12.
  */
@@ -16,9 +18,11 @@ public class Runner implements CommandLineRunner {
         this.service = service;
     }
 
-
+    @Autowired
+    DataSource ds;
     @Override
     public void run(String... strings) throws Exception {
+        System.out.println("ds:"+ds.getClass());
         service.serve();
     }
 }

@@ -127,6 +127,10 @@ exclude module: "spring-boot-starter-tomcat"
     compile 'com.alibaba:druid-spring-boot-starter:1.1.6'
     compile 'com.alibaba:druid:1.1.6'
 
+    // 增加HikariCP连接池
+    compile 'com.zaxxer:HikariCP'
+
+
 
 }
 //compileJava.dependsOn(processResources)
