@@ -1,6 +1,6 @@
 package com.xiaoyue.nov.ctrl;
 
-import com.xiaoyue.nov.storage.Reader;
+import com.xiaoyue.nov.storage.jpa.Reader;
 import org.springframework.core.MethodParameter;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;

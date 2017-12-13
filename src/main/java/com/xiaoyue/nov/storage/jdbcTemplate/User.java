@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.storage;
+package com.xiaoyue.nov.storage.jdbcTemplate;
 
 /**
  * Created by xiaoyue26 on 17/11/30.

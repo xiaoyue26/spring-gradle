@@ -1,7 +1,7 @@
 package com.xiaoyue.nov;
 
-import com.xiaoyue.nov.storage.IUserDAO;
-import com.xiaoyue.nov.storage.User;
+import com.xiaoyue.nov.storage.jdbcTemplate.IUserDAO;
+import com.xiaoyue.nov.storage.jdbcTemplate.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

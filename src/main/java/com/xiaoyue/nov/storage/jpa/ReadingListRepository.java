@@ -1,8 +1,7 @@
-package com.xiaoyue.nov.storage;
+package com.xiaoyue.nov.storage.jpa;
 
 import java.util.List;
 
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ReadingListRepository extends JpaRepository<Book, Long> {

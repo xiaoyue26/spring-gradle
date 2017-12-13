@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.xiaoyue.nov.storage.Reader;
+import com.xiaoyue.nov.storage.jpa.Reader;
 
 /**
  * Created by xiaoyue26 on 17/11/26.

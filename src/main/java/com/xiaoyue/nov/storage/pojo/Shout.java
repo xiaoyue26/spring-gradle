@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.storage;
+package com.xiaoyue.nov.storage.pojo;
 
 /**
  * Created by xiaoyue26 on 17/12/8.

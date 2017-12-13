@@ -12,7 +12,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Value;
-import com.xiaoyue.nov.storage.Reader;
+import com.xiaoyue.nov.storage.jpa.Reader;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.*;

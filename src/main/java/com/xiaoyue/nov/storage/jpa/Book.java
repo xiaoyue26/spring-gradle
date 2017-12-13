@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.storage;
+package com.xiaoyue.nov.storage.jpa;
 
 
 import javax.persistence.*;

@@ -1,4 +1,4 @@
-package com.xiaoyue.nov.storage;
+package com.xiaoyue.nov.storage.jpa;
 
 import java.util.Arrays;
 import java.util.Collection;
