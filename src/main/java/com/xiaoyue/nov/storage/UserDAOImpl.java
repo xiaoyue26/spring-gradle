@@ -52,19 +52,17 @@ public class UserDAOImpl extends JdbcDaoSupport implements IUserDAO {
     @Override
     public User searchUser(int id) {
         String sql = "select * from user where id=?";
-        return this.getJdbcTemplate().queryForObject(sql, new UserRowMapper(), id);
+        return this.getJdbcTemplate().queryForObject(sql, USER_ROW_MAPPER, id);
     }
 
-    class UserRowMapper implements RowMapper<User> {//rs为返回结果集，以每行为单位封装着
 
-        public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+    private static final RowMapper<User> USER_ROW_MAPPER = (rs, rownum) -> {
+        //rs为返回结果集，以每行为单位封装着
+        User user = new User();
+        user.setId(rs.getLong("id"));
+        user.setUsername(rs.getString("username"));
+        user.setPassword(rs.getString("password"));
+        return user;
+    };
 
-            User user = new User();
-            user.setId(rs.getLong("id"));
-            user.setUsername(rs.getString("username"));
-            user.setPassword(rs.getString("password"));
-            return user;
-        }
-
-    }
 }

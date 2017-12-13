@@ -115,6 +115,7 @@ exclude module: "spring-boot-starter-tomcat"
     //compile 'org.apache.curator:curator-framework:3.3.0'
     compile group: 'org.apache.curator', name: 'curator-framework', version: '4.0.0'
     compile group: 'org.apache.curator', name: 'curator-recipes', version: '4.0.0'
+    compile group: 'org.apache.curator', name: 'curator-client', version: '4.0.0'
 
 
 
