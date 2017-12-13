@@ -123,6 +123,10 @@ exclude module: "spring-boot-starter-tomcat"
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     //compile 'commons-lang:commons-lang:2.6'
 
+    // 增加数据库连接池:
+    compile 'com.alibaba:druid-spring-boot-starter:1.1.6'
+
+
 }
 //compileJava.dependsOn(processResources)
 

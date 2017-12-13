@@ -20,13 +20,13 @@ import java.util.Map;
 /**
  * Created by xiaoyue26 on 17/11/26.
  */
-@EnableTransactionManagement
+/*@EnableTransactionManagement
 @EnableAutoConfiguration
 @ComponentScan
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryPrimary",
         transactionManagerRef="transactionManagerPrimary",
-        basePackages= {"com.xiaoyue.nov.storage"}) //设置Repository所在位置
+        basePackages= {"com.xiaoyue.nov.storage"}) //设置Repository所在位置*/
 public class PrimaryConfig {
     @Autowired @Qualifier("primaryDataSource")
     private DataSource primaryDataSource;

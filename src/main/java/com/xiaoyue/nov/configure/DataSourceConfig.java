@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 /**
  * Created by xiaoyue26 on 17/11/26.
  */
-@Configuration
+//@Configuration
 public class DataSourceConfig {
     @Bean(name = "primaryDataSource")
     @Qualifier("primaryDataSource")
