@@ -25,7 +25,7 @@ public class MailTest {
     private JavaMailSenderImpl mailSender;
 
     @Test
-    //@Ignore
+    @Ignore
     public void testMail() throws Exception {
         SimpleMailMessage msg=new SimpleMailMessage();
         msg.setFrom("no-reply@fenbi.com");
